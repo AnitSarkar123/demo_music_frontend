@@ -22,22 +22,13 @@ import {
 import BreadcrumbPageClient from "~/components/sidebar/breadcrumb-page-client";
 import SoundBar from "~/components/sound-bar";
 
-export const metadata: Metadata = {
-  title: "Home",
-  description: "Music Generator",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-};
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html lang="en" className={""}>
       <body>
         <Providers>
           <SidebarProvider>
@@ -60,7 +51,7 @@ export default function RootLayout({
                 </div>
               </header>
               <main className="flex-1 overflow-y-auto">{children}</main>
-               <SoundBar /> 
+              <SoundBar />
             </SidebarInset>
           </SidebarProvider>
           <Toaster />
